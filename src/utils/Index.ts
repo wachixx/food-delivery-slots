@@ -26,3 +26,12 @@ export const DateFormatter = (date:Date) => {
     return formatObject;
 
 }
+
+export const getTotalOrderPerDeliveryTime = (orders : any) => { 
+    var totalOrders = orders.reduce(function (r:any, row: any) {
+      r[row.time] = ++r[row.time] || 1;
+      return r;
+    }, {});
+    return totalOrders;
+  }
+

@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {Context}  from '../context/Store';
-import {DateFormatter} from '../utils/DateFormatter';
+import {DateFormatter} from '../utils/Index';
 
 
 const Header: React.FC = () => { 
@@ -12,11 +12,6 @@ const Header: React.FC = () => {
     setDay(new Date(e.target.value));
     dispatch({type:"SET",key:"dateSelected", payload: new Date(e.target.value)});
   }
-
-  useEffect(() => {
-    setDay(new Date());
-    dispatch({type:"SET",key:"dateSelected",payload: day});
-  },[])
 
   return (
     <header className="header-wrapper">
